@@ -5,9 +5,20 @@
 
 ## Code
 
-This toolbox contains some useful code in calibrating Kinect, which also replicates my review work in Kinect calibration.
+This toolbox contains some useful Matlab code for Kinect (ASUS Xtion) RGB and depth camera calibration.
 
-For anyone intersted in this work, you can find details from my review paper ["A review and quantitative comparison of methods for kinect calibration"](http://vlm1.uta.edu/~athitsos/publications/xiang_iwoar2015.pdf) as well as the corresponding [technical report](assets/joint_calibration.pdf).
+This is a modified Matlab code from Herrera's _TPAMI_ paper ["Joint depth and color camera calibration with distortion correction"](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6205765).
+
+</section>
+
+
+<section>
+
+## Usage
+
+Run [main_script.m](toolbox/main_script.m) to start, main code is quite easy to understand as long as you follow the command prompts.
+
+Basically, it calibrates using your pre-obtained data (offline).
 
 </section>
 
@@ -16,9 +27,9 @@ For anyone intersted in this work, you can find details from my review paper ["A
 
 ## Environment
 
-|        OS        |       Language       |
-|------------------|----------------------|
-| Windows 7 64-bit | Matlab R2017a 64-bit |
+|        OS        |       Language       |      MEX Configuration (C/C++)     |
+|------------------|----------------------|------------------------------------|
+| Windows 7 64-bit | Matlab R2017a 64-bit | MS Visual Studio 2015 Professional |
 
 </section>
 
