@@ -25,11 +25,16 @@ Basically, it calibrates using your pre-obtained data (offline).
 
 <section>
 
-## Environment
+## Kinect v1 for Xbox 360 Model 1473
 
-|        OS        |       Language       |      MEX Configuration (C/C++)     |
-|------------------|----------------------|------------------------------------|
-| Windows 7 64-bit | Matlab R2017a 64-bit | MS Visual Studio 2015 Professional |
+*   Environments: Windows 7 (64-bit) + Matlab R2013a (64-bit) + Kinect for Windows SDK v1.6
+
+Note that Matlab, SDK 1.6 can be downloaded [here](https://www.mathworks.com/downloads/) and [here](https://www.microsoft.com/en-us/download/details.aspx?id=34808).
+
+
+## Kinect v1 for Windows
+
+*   Environments: ???
 
 </section>
 
