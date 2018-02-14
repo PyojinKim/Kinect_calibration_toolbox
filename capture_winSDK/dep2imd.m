@@ -6,6 +6,7 @@ dep = double(dep);
 
 dep(dep == nan_value) = NaN;
 imd = (1./(dep*dc(2))) - (dc(1)/dc(2)); % transform to disparity
+imd = round(imd);
 
 % % change nan and max value according to your disparity content
 % max_value = max(imd(:)); min_value = min(imd(:));
@@ -19,11 +20,11 @@ imd = (1./(dep*dc(2))) - (dc(1)/dc(2)); % transform to disparity
 % -- note that we can't do "normalize to [0,1] with min and max of current imd"
 % -- cause after conversion, the disparity range is fixed and specified to
 % -- corresponding distance
-lower_bound = (1./(0.5*dc(2))) - (dc(1)/dc(2)); %678.0987;
-higher_bound = (1./(6.0*dc(2))) - (dc(1)/dc(2)); %1002.6947;
-imd = (imd+1-lower_bound)/(higher_bound-lower_bound+1);
+% lower_bound = (1./(0.5*dc(2))) - (dc(1)/dc(2)); %678.0987;
+% higher_bound = (1./(6.0*dc(2))) - (dc(1)/dc(2)); %1002.6947;
+% imd = (imd+1-lower_bound)/(higher_bound-lower_bound+1);
 % scale vector into [0, 2047)
-imd = imd * 2047;
+% imd = imd * 2047;
 
 imd = uint16(imd);
 imd = double(imd);

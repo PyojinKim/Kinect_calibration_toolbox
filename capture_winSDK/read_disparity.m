@@ -57,31 +57,3 @@ end
 %Set invalid depths to NaN
 imd = double(imd);
 imd(imd==nan_value) = NaN;
-
-
-% restore disparity map (pjinkim)
-dc = [3.3309495161 -0.0030711016];                   % dc = [2.3958 -0.0022];
-lower_bound = (1./(0.5*dc(2))) - (dc(1)/dc(2));    %678.0987;
-higher_bound = (1./(6.0*dc(2))) - (dc(1)/dc(2));   %1002.6947;
-
-imd = imd / max_value;
-imd = imd * (higher_bound-lower_bound+1) + lower_bound - 1;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
