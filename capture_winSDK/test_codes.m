@@ -55,3 +55,63 @@ axis equal; view(-36,30); hold off;
 xlabel('X [m]');
 ylabel('Y [m]');
 zlabel('Z [m]');
+
+
+%%
+
+dc = [3.3309495161 -0.0030711016]; % dc = [2.3958 -0.0022];
+
+disp = 0:1:2047;
+
+t_dep = 1./(dc(2)*disp + dc(1));
+
+figure;
+plot(disp,t_dep);
+
+
+
+
+imd = read_disparity('../pjinkim_kinect_calibration_01/0000-d.pgm');
+
+imd = read_disparity('../smallset/0003-d.pgm');
+
+imd = read_disparity('../data/0006-d.pgm');
+
+
+
+
+temp = uint16(imread(filename));
+
+%Set invalid depths to NaN
+imd = double(imd);
+tempfordebug(tempfordebug==2047) = nan;
+
+
+tempfordebug(isnan(tempfordebug)) = 0;
+imd(isnan(imd)) = 0;
+
+tempfordebug == imd
+
+
+
+figure;
+imshow(disparityImage,[]);
+
+
+
+figure;
+imshow(imd,[]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
