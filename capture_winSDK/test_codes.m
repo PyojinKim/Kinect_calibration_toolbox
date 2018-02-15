@@ -22,6 +22,12 @@ figure;
 imshow(d_img,[]);
 
 
+cam.K = eye(3);
+cam.K(1,1) = 525;
+cam.K(2,2) = 525;
+cam.K(1,3) = 319.5;
+cam.K(2,3) = 239.5;
+
 
 imageHeight = size(d_img,1);
 imageWidth = size(d_img,2);
@@ -59,14 +65,24 @@ zlabel('Z [m]');
 
 %%
 
+% depth to disparity relationship
 dc = [3.3309495161 -0.0030711016]; % dc = [2.3958 -0.0022];
-
-disp = 0:1:2047;
-
-t_dep = 1./(dc(2)*disp + dc(1));
+depth = 0.4:0.01:8.0;
+disparity = (1./(depth*dc(2))) - (dc(1)/dc(2));
 
 figure;
-plot(disp,t_dep);
+plot(depth,disparity); grid on;
+xlabel('depth'); ylabel('disparity');
+
+
+% disparity to depth relationship
+dc = [3.3309495161 -0.0030711016]; % dc = [2.3958 -0.0022];
+disparity = 380:1:1010;
+depth = 1./(dc(2)*disparity + dc(1));
+
+figure;
+plot(disparity,depth); grid on;
+xlabel('disparity'); ylabel('depth');
 
 
 
