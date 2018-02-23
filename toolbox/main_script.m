@@ -13,7 +13,7 @@ addpath('autoCornerFinder');
 do_select_images();
 
 % Example:
-% Path: ../smallset/
+% Path: ../dataset_xw1120/
 % Num: 1
 % RGB format: %.4d-c1.jpg
 % Depth format: %.4d-d.pgm
@@ -62,8 +62,8 @@ do_calib(use_depth_distorsion);
 do_rgb_depthmap();
 
 % Example:
-% depth image: ../smallset/0003-d.pgm
-% RGB image: ../smallset/0003-c1.jpg
+% depth image: ../dataset_xw1120/0003-d.pgm
+% RGB image: ../dataset_xw1120/0003-c1.jpg
 
 
 
