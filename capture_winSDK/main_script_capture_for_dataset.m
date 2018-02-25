@@ -111,7 +111,7 @@ saveDir = '../rgbd_dataset_302_02_office1';
 
 
 % save color and depth images
-h = figure;
+h_superposition = figure;
 for imgIdx = 1:recordImgNum
     
     % read current color and depth_distorted image
@@ -141,12 +141,11 @@ for imgIdx = 1:recordImgNum
     
     
     % show color and depth superposition
-    figure(h);
-    clf;
+    cla;
     imshow(color_image,[]); hold on;
     h_depth = imshow(depth_image,[]); hold off;
     set(h_depth, 'AlphaData', 0.5);
-    drawnow;
+    pause(0.001); refresh(h_superposition);
 end
 
 
