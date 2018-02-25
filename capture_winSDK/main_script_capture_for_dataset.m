@@ -36,8 +36,20 @@ triggerconfig([colorVid depthVid],'manual');
 start([colorVid depthVid]);
 
 
+% first color and depth image for display
+trigger([colorVid depthVid])
+[colorFrameData, ~, ~] = getdata(colorVid);
+[depthFrameData, ~, ~] = getdata(depthVid);
+firstColor = flipdim(colorFrameData,2);
+firstDepth = flipdim(depthFrameData,2);
+
+
 % collect (plot) RGB and depth_distorted image from Kinect
 h = figure(101);
+subplot(1,2,1);
+h1 = imshow(firstColor,[]);
+subplot(1,2,2);
+h2 = imshow(firstDepth,[]);
 set(gcf,'Position',[200 300 1500 500]);
 set(h,'KeyPressFcn',{@figure_keypress});
 disp('--------------------------------------------------');
@@ -47,6 +59,7 @@ disp('--------------------------------------------------');
 for imgIdx = 1:maxImgNum
     
     % trigger both objects
+    pause(1/20);
     trigger([colorVid depthVid])
     
     
@@ -63,15 +76,9 @@ for imgIdx = 1:maxImgNum
     fprintf('recording %010d-th frame...\n', imgIdx);
     
     
-    % plot RGB and disparity image
-    figure(h);
-    subplot(1,2,1);
-    imshow(colorImage,[]);
-    title('Color');
-    subplot(1,2,2);
-    imshow(depthDistortedImage,[]);
-    title('Depth');
-    drawnow;
+    % update RGB and disparity image
+    set(h1, 'CData', colorImage);
+    set(h2, 'CData', depthDistortedImage);
     
     
     % detect keyboard stroke 'x'
