@@ -20,7 +20,7 @@ info.DeviceInfo(2)
 %% main script
 
 % save directory for color, disparity image
-saveDir = '../pjinkim_kinect_calibration_01';
+saveDir = '../dataset_pjinkim_01';
 if (~exist(saveDir, 'dir'))
     mkdir(saveDir);
 end

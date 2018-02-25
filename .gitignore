@@ -3,3 +3,4 @@ toolbox/autoCornerFinder/cToMatlab/cornerInfo.txt
 toolbox/autoCornerFinder/cToMatlab/cornersX.txt
 toolbox/autoCornerFinder/cToMatlab/cornersY.txt
 toolbox/autoCornerFinder/cToMatlab/error.txt
+*.png
