@@ -139,6 +139,7 @@ for imgIdx = 1:recordImgNum
     imshow(color_image,[]); hold on;
     h_depth = imshow(depth_image,[]); hold off;
     set(h_depth, 'AlphaData', 0.5);
+    drawnow;
 end
 
 
