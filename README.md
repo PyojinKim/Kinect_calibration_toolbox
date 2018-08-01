@@ -32,9 +32,11 @@ Basically, it calibrates using your pre-obtained data (offline).
 Note that Matlab, SDK 1.6 can be downloaded [here](https://www.mathworks.com/downloads/) and [here](https://www.microsoft.com/en-us/download/details.aspx?id=34808).
 
 
-## Kinect v1 for Windows
+## Kinect v1 for Windows Model 1517
 
-*   Environments: ???
+*   Environments: Windows 7 (64-bit) + Matlab R2013a (64-bit) + Kinect for Windows SDK v1.8
+
+Note that Matlab, SDK 1.8 can be downloaded [here](https://www.mathworks.com/downloads/) and [here](https://www.microsoft.com/en-us/download/details.aspx?id=40278).
 
 </section>
 
